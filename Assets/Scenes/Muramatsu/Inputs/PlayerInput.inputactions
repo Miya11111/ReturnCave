@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "PlayerActionMap",
@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Walk",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "1e34dcc9-21b5-43ef-a8eb-ada647479f9f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
