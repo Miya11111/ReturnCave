@@ -16,12 +16,12 @@ public class ChangeWorld : MonoBehaviour
         this.worldManager = FindObjectOfType<WorldManager>();
 
         if(isRightButton == true){
-            newWorldPosX = 1000;
-            moveSpeedX = -10;
+            newWorldPosX = 1000 * (Screen.width / 800);
+            moveSpeedX = -10 * (Screen.width / 800);
         }
         else{
-            newWorldPosX = -1000;
-            moveSpeedX = 10;
+            newWorldPosX = -1000 * (Screen.width / 800);
+            moveSpeedX = 10 * (Screen.width / 800);
         }
     }
 
@@ -45,7 +45,7 @@ public class ChangeWorld : MonoBehaviour
 
         //新しいワールドのインスタンスを生成
         GameObject nextWorldObj = worldManager.enableWorldList[worldManager.worldListIndex];
-        nextWorld = Instantiate(nextWorldObj, new Vector3(400 + newWorldPosX,300,0), transform.rotation,this.transform.root);
+        nextWorld = Instantiate(nextWorldObj, new Vector3(Screen.width / 2 + newWorldPosX,Screen.height / 2,0), transform.rotation,this.transform.root);
 
         //ワールド画面を移動させるためのコルーチン
         StartCoroutine("MoveWorld");
@@ -54,9 +54,9 @@ public class ChangeWorld : MonoBehaviour
     IEnumerator MoveWorld(){
         GameObject nowWorld = transform.parent.gameObject;
         for(int i = 0; i < 100; i++){
-            nowWorld.transform.Translate(moveSpeedX,0,0);
-            nextWorld.transform.Translate(moveSpeedX,0,0);
-            yield return new WaitForSeconds(0.007f);
+            nowWorld.transform.Translate(moveSpeedX ,0,0);
+            nextWorld.transform.Translate(moveSpeedX ,0,0);
+            yield return new WaitForSeconds(0.0005f);
         }
 
         Destroy(nowWorld);

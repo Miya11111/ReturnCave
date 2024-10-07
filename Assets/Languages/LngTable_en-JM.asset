@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LngTable_en-JM
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-JM
+  m_SharedData: {fileID: 11400000, guid: 4b707196a561b0e4881be84181d53029, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8305958912
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73300893696
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141554802688
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1041920876544
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1133184737280
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220229128192
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2133375246336
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2220079898624
+    m_Localized: KeyConfig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2475362017280
+    m_Localized: Enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5227802714112
+    m_Localized: KeyConfig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321042092032
+    m_Localized: Enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7158084329472
+    m_Localized: Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7358370734080
+    m_Localized: Cave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7533453565952
+    m_Localized: Desert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7688785420288
+    m_Localized: Sky
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14140161843200
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14219480326144
+    m_Localized: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14299440537600
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

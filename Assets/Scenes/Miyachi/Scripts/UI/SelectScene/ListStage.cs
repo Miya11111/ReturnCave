@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [System.Serializable]
@@ -28,11 +27,11 @@ public class ListStage : MonoBehaviour
             StageProperty sProperty = stage.GetComponent<StageProperty>();
             sProperty.Create(stagelist[i].name,stagelist[i].image);
             
-            buttonPos.x += moveX;
+            buttonPos.x += moveX * Screen.width;
             //ボタンを3つ横に並べたら、一段下に移動
             if((i + 1) % 3 == 0){
-                buttonPos.y += moveY;
-                buttonPos.x -= (moveX * 3);
+                buttonPos.y += -moveY * Screen.height;
+                buttonPos.x -= moveX * Screen.width * 3;
             }
             
         }
