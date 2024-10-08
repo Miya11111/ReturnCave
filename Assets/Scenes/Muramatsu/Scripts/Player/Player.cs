@@ -11,13 +11,9 @@ namespace Player
     {
         private PlayerMovement playerMovement;
 
-        //private Animator playerAnimator = default;
-
         private void Awake()
         {
             playerMovement = GetComponent<PlayerMovement>();
-
-            //playerAnimator = GetComponent<Animator>();
         }
     }
 }

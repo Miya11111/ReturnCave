@@ -9,6 +9,18 @@ namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        public enum PlayerMovementState
+        {
+            Idle,       // 地上で無操作状態
+            Walking,    // 地上で左右移動状態
+            Running,    // 地上で走っている状態
+        };
+
+        private PlayerMovementState _currentState;
+
+        private bool _isGrounded;
+        public bool IsGrounded { get { return _isGrounded; } }
+
         private Rigidbody2D _rb2d;
 
         [Header("歩く速さ") , SerializeField]
@@ -28,32 +40,62 @@ namespace Player
             _rb2d = GetComponent<Rigidbody2D>();
         }
 
-        // InputSystemから呼ばれる
+        // InputSystemから呼ばれる左右移動用関数
         public void OnMove(InputAction.CallbackContext context)
         {
-            Debug.Log("on move");
+            Debug.Log("Player: on move");
 
             // 移動用の入力値を保存
             _horizontalInput = context.ReadValue<float>();
-
-            
-            //_rb2d.AddForce(_horizontalInput * _horizontalMoveForce);
-            
         }
 
-        // InputSystemから呼ばれる
+        // InputSystemから呼ばれるジャンプ用関数
         public void OnJump(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed)
             {
-                Debug.Log("on jump");
-
-                _rb2d.AddForce(_thrust, ForceMode2D.Impulse);
+                if (_isGrounded)
+                {
+                    Debug.Log("Player: on jump");
+                    _rb2d.AddForce(_thrust, ForceMode2D.Impulse);
+                }
             }
+        }
+
+        // Playerが着地している間のフレームに実行(判定のために足元のBoxCollider2Dを使用)
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            Debug.Log("Player: Grounding");
+
+            _isGrounded = true;
+        }
+
+        // Playerが地面から離れたフレームに実行(判定のために足元のBoxCollider2Dを使用)
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            Debug.Log("Player: Ground Exit");
+
+            _isGrounded = false;
+        }
+
+        // Playerの状態を更新する
+        private void UpdatePlayerMovementState(PlayerMovementState newState)
+        {
+            Debug.Log("Player: State is " + newState);
+
+            _currentState = newState;
+        }
+
+        // Playerの状態を参照する
+        public PlayerMovementState GetCurrentPlayerMovementState()
+        {
+            return _currentState;
         }
 
         private void FixedUpdate()
         {
+            // raycastで接地判定
+
             _rb2d.AddForce(_horizontalInput * _horizontalMoveForce);
 
             if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
