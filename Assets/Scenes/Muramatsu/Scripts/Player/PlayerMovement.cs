@@ -86,7 +86,7 @@ namespace Player
             _currentState = newState;
         }
 
-        // Playerの状態を参照する
+        // Playerの移動状態を参照する
         public PlayerMovementState GetCurrentPlayerMovementState()
         {
             return _currentState;
@@ -94,12 +94,14 @@ namespace Player
 
         private void FixedUpdate()
         {
-            // raycastで接地判定
+            // raycastで接地判定を実装したい
 
             _rb2d.AddForce(_horizontalInput * _horizontalMoveForce);
 
+            // 移動速度が既定値を超えている場合
             if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
             {
+                // 移動速度を規定値に直す
                 _rb2d.velocity = new Vector2(_horizontalInput * _movementLimitVelocity.x, _rb2d.velocity.y);
             }
         }
