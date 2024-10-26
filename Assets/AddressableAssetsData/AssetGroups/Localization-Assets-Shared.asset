@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_Data:
     m_SerializedData: []
-  m_GUID: 4ac1b0c7a26b65c43bd28ade789afe0f
+  m_GUID: b1182b28c5f39e341af54644e3d8a227
   m_SerializeEntries:
   - m_GUID: 4b707196a561b0e4881be84181d53029
     m_Address: Assets/Languages/LngTable Shared Data.asset
@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 1860cd836857caf418eb15876c1d43f4, type: 2}
+  m_Settings: {fileID: 11400000, guid: 4a7bac032bb698845aa3cd7d27c9c1d4, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 3445fe6c13026394eb6953bb43c4c5e1, type: 2}
