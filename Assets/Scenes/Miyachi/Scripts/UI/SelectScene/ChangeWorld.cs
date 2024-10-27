@@ -28,23 +28,26 @@ public class ChangeWorld : MonoBehaviour
     public void OnClick(){
         //移動した分のworldListの添え字を変更
         if(this.isRightButton == true) {
-            if(worldManager.worldListIndex + 1 < worldManager.enableWorldList.Length) {
-                worldManager.worldListIndex++;
+            if(WorldManager.worldIndex + 1 < worldManager.worldList.Length && worldManager.clearCount >= 2) {
+                WorldManager.worldIndex++;
             } else {
                 Debug.Log("ワールドの移動範囲外です！");
                 return;
             }
         } else {
-            if(worldManager.worldListIndex - 1 >= 0) {
-                worldManager.worldListIndex--;
+            if(WorldManager.worldIndex - 1 >= 0) {
+                WorldManager.worldIndex--;
             } else {
                 Debug.Log("ワールドの移動範囲外です！");
                 return;
             }
         }
 
+        //クリアしたステージ数を確認
+        worldManager.CheckClearCount();
+
         //新しいワールドのインスタンスを生成
-        GameObject nextWorldObj = worldManager.enableWorldList[worldManager.worldListIndex];
+        GameObject nextWorldObj = worldManager.worldList[WorldManager.worldIndex];
         nextWorld = Instantiate(nextWorldObj, new Vector3(Screen.width / 2 + newWorldPosX,Screen.height / 2,0), transform.rotation,this.transform.root);
 
         //ワールド画面を移動させるためのコルーチン

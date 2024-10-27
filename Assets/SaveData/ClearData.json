@@ -1,0 +1,97 @@
+{
+  "worldData": [
+    {
+      "stageData": [
+        {
+          "isClear": true
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": true
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        }
+      ]
+    },
+    {
+      "stageData": [
+        {
+          "isClear": true
+        },
+        {
+          "isClear": true
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        }
+      ]
+    },
+    {
+      "stageData": [
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        },
+        {
+          "isClear": false
+        }
+      ]
+    }
+  ]
+}

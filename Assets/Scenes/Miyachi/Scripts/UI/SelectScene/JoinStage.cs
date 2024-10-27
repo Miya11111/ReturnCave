@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class JoinStage : MonoBehaviour
 {
-    
+    StageProperty stageProperty;
+    WorldManager worldManager;
     private Text stageName;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,9 @@ public class JoinStage : MonoBehaviour
 
     // Update is called once per frame
     public void OnClick(){
+        //worldManagerに現在のステージ番号を渡す
+        stageProperty = this.GetComponent<StageProperty>();
+        WorldManager.stageIndex = stageProperty.sIndex;
         SceneManager.LoadScene(stageName.text);
     }
 }
