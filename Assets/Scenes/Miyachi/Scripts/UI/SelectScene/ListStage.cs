@@ -10,8 +10,7 @@ public struct StageList{
 }
 public class ListStage : MonoBehaviour
 {
-    [SerializeField]
-    private StageList[] stagelist;
+    public StageList[] stagelist;
     [SerializeField]
     private GameObject stageTemplete;
     [SerializeField]
@@ -25,7 +24,7 @@ public class ListStage : MonoBehaviour
             GameObject stage = Instantiate(stageTemplete, this.transform.position, transform.rotation,this.transform ) as GameObject;
             stage.transform.position = buttonPos;
             StageProperty sProperty = stage.GetComponent<StageProperty>();
-            sProperty.Create(stagelist[i].name,stagelist[i].image);
+            sProperty.Create(stagelist[i].name,stagelist[i].image, i);
             
             buttonPos.x += moveX * Screen.width;
             //ボタンを3つ横に並べたら、一段下に移動

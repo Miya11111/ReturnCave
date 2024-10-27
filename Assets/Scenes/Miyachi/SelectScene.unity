@@ -209,6 +209,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cave
       objectReference: {fileID: 0}
+    - target: {fileID: 1560937187839936070, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.26971343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.26971343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.2735849
+      objectReference: {fileID: 0}
     - target: {fileID: 4980043951321743165, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 150
@@ -228,6 +244,22 @@ PrefabInstance:
     - target: {fileID: 5092971363953789510, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.26971343
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.26971343
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455382178846588235, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7479957163261789521, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -652,11 +684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d78b4ec389f774ca3cba342871e94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldList: []
-  <enableWorldList>k__BackingField:
+  <worldList>k__BackingField:
   - {fileID: 1560937187839936070, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
   - {fileID: 4689856238957233664, guid: 1338cfb4b5fe89f4b940fd1fae62ecdd, type: 3}
   - {fileID: 9102094612152961263, guid: 4e130b838ba7f024da491401ae3234d5, type: 3}
+  saveData: {fileID: 4900000, guid: 02f84b267b881b74cbb74a08f440330c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
