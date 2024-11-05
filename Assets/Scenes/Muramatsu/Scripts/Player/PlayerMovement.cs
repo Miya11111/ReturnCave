@@ -33,7 +33,7 @@ namespace Player
         private float _horizontalInput = 0.0f;
 
         [Header("通常移動時の限界速度"), SerializeField]
-        private Vector2 _movementLimitVelocity　= new Vector2(5.0f, 20.0f);
+        private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
 
         private void Awake()
         {
@@ -43,7 +43,7 @@ namespace Player
         // InputSystemから呼ばれる左右移動用関数
         public void OnMove(InputAction.CallbackContext context)
         {
-            Debug.Log("Player: on move");
+            //Debug.Log("Player: on move");
 
             // 移動用の入力値を保存
             _horizontalInput = context.ReadValue<float>();
@@ -56,7 +56,7 @@ namespace Player
             {
                 if (_isGrounded)
                 {
-                    Debug.Log("Player: on jump");
+                    //Debug.Log("Player: on jump");
                     _rb2d.AddForce(_thrust, ForceMode2D.Impulse);
                 }
             }
@@ -65,7 +65,7 @@ namespace Player
         // Playerが着地している間のフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerStay2D(Collider2D collision)
         {
-            Debug.Log("Player: Grounding");
+            //Debug.Log("Player: Grounding");
 
             _isGrounded = true;
         }
@@ -73,7 +73,7 @@ namespace Player
         // Playerが地面から離れたフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("Player: Ground Exit");
+            //Debug.Log("Player: Ground Exit");
 
             _isGrounded = false;
         }
@@ -81,7 +81,7 @@ namespace Player
         // Playerの状態を更新する
         private void UpdatePlayerMovementState(PlayerMovementState newState)
         {
-            Debug.Log("Player: State is " + newState);
+            //Debug.Log("Player: State is " + newState);
 
             _currentState = newState;
         }
