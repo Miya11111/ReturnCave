@@ -6,10 +6,7 @@ using UnityEngine.Windows.Speech;
 public class EnemyWalk : MonoBehaviour
 {
     [Header("歩く速さ") , SerializeField]
-    private Vector2 _horizontalMoveForce = new Vector2(10.0f, 0);
-
-    [Header("空中での速さ") , SerializeField]
-    private Vector2 _horizontalMoveForceSky = new Vector2(0, -30.0f);
+    private Vector2 _horizontalMoveForce = new Vector2(11.0f, 2f);   //この値は丁度ブロックで反転する・坂を登れる・坂から落ちるとき過度に弾まない値
 
     [Header("通常移動時の限界速度"), SerializeField]
     private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
@@ -33,22 +30,17 @@ public class EnemyWalk : MonoBehaviour
     //左右に動く
     void FixedUpdate()
     {
-        //空中にいるときは重力を強くする
-        if(isGrounded)
-        {
             _rb2d.AddForce(_horizontalMoveForce);
-        }
-        else{
-            _rb2d.AddForce(_horizontalMoveForceSky);
-        }
         
-        // 進行方向にプレイヤー以外があった際に反転
-        Vector2 checkPoint = (Vector2)transform.position + Vector2.right * (moveRight ? 1f : -1f) + Vector2.down;
+        // 進行方向にプレイヤーか他の敵以外があって止まった際に反転
+        Vector2 checkPoint = (Vector2)transform.position + Vector2.right * (moveRight ? 0.1f : -0.1f) + Vector2.down;
         Collider2D hit = Physics2D.OverlapPoint(checkPoint);
         if(hit != null && hit.tag != "Player" && _rb2d.velocity.x == 0 && enableFlip == true){
-            Flip();
-            enableFlip = false;
-            Invoke(nameof(waitFlip), 1f);
+                Debug.Log(hit);
+                Flip();
+                enableFlip = false;
+                Invoke(nameof(waitFlip), 1f);
+                Debug.Log("BlockFlip");
         }
 
         // 移動速度が既定値を超えている場合
@@ -63,6 +55,14 @@ public class EnemyWalk : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
+
+        //敵にぶつかったら反転
+        if(collision.gameObject.tag == "Enemy" && enableFlip == true){
+            Flip();
+            enableFlip = false;
+            Invoke(nameof(waitFlip), 1f);
+            Debug.Log("EnemyFlip : enableFlip = " + enableFlip);
+        }
     }
 
     //空中にいるときtrue
@@ -83,11 +83,6 @@ public class EnemyWalk : MonoBehaviour
         transform.localScale = localScale;
         _horizontalMoveForce.x = -_horizontalMoveForce.x;
         _movementLimitVelocity.x = -_movementLimitVelocity.x;
+        moveRight = !moveRight;
     }
-    // void OnCollisionEnter2D(Collision2D collision){
-    //     if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Ground"){
-    //         _rb2d.velocity = Vector2.zero;
-    //         _horizontalMoveForce.x = -_horizontalMoveForce.x;
-    //     }
-    // }
 }

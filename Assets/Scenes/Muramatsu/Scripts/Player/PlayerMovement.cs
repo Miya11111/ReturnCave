@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Player;
 using UnityEngine.UIElements;
+using System;
 
 namespace Player
 {
@@ -76,6 +77,15 @@ namespace Player
             //Debug.Log("Player: Ground Exit");
 
             _isGrounded = false;
+        }
+
+        //“G‚É“–‚½‚Á‚½‚Æ‚«‚ÉÀs(€–S”»’è)
+        private void OnCollisionEnter2D(Collision2D collision){
+            if(collision.gameObject.tag == "Enemy"){
+                Debug.Log("Player: Dead");
+                Destroy(this);
+                Time.timeScale = 0;
+            }
         }
 
         // Player‚Ìó‘Ô‚ğXV‚·‚é
