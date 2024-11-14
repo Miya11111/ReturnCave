@@ -19,7 +19,7 @@ namespace Player
 
         private PlayerMovementState _currentState;
 
-        private bool _isGrounded;
+        public bool _isGrounded {set; get;}
         public bool IsGrounded { get { return _isGrounded; } }
 
         private Rigidbody2D _rb2d;

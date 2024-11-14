@@ -36,11 +36,9 @@ public class EnemyWalk : MonoBehaviour
         Vector2 checkPoint = (Vector2)transform.position + Vector2.right * (moveRight ? 0.1f : -0.1f) + Vector2.down;
         Collider2D hit = Physics2D.OverlapPoint(checkPoint);
         if(hit != null && hit.tag != "Player" && _rb2d.velocity.x == 0 && enableFlip == true){
-                Debug.Log(hit);
                 Flip();
                 enableFlip = false;
                 Invoke(nameof(waitFlip), 1f);
-                Debug.Log("BlockFlip");
         }
 
         // 移動速度が既定値を超えている場合
