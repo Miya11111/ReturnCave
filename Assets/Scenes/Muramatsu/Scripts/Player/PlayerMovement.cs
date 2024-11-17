@@ -13,27 +13,30 @@ namespace Player
         public enum PlayerMovementState
         {
             Idle,       // 地上で無操作状態
-            Walking,    // 地上で左右移動状態
-            Running,    // 地上で走っている状態
+            Moving,     // 地上で左右移動状態
+            InAir,      // 空中で浮遊状態
         };
 
         private PlayerMovementState _currentState;
 
-        public bool _isGrounded {set; get;}
-        public bool IsGrounded { get { return _isGrounded; } }
+        public bool     _isGrounded;
+        private bool    _isRunning;
 
         private Rigidbody2D _rb2d;
 
         [Header("歩く速さ") , SerializeField]
         private Vector2 _horizontalMoveForce = new Vector2(10.0f, 0);
-        
+
+        [Header("ダッシュ時の速度係数"), SerializeField]
+        private float _dushVelocityCoefficient = 1.25f;
+
         [Header("ジャンプの強さ"), SerializeField]
         private Vector2 _thrust = new Vector2(0.0f, 6.0f);
 
         // 水平移動の入力を保存
         private float _horizontalInput = 0.0f;
 
-        [Header("通常移動時の限界速度"), SerializeField]
+        [Header("移動時の限界速度"), SerializeField]
         private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
 
         private void Awake()
@@ -60,6 +63,21 @@ namespace Player
                     //Debug.Log("Player: on jump");
                     _rb2d.AddForce(_thrust, ForceMode2D.Impulse);
                 }
+            }
+        }
+
+        // InputSystemから呼ばれるダッシュ移動用関数
+        public void OnDush(InputAction.CallbackContext context)
+        {
+            //Debug.Log("Player: on dush");
+
+            if (context.phase == InputActionPhase.Performed)
+            {
+                _isRunning = true;
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                _isRunning = false;
             }
         }
 
@@ -108,12 +126,26 @@ namespace Player
 
             _rb2d.AddForce(_horizontalInput * _horizontalMoveForce);
 
-            // 移動速度が既定値を超えている場合
-            if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
+            if(_isRunning)
             {
-                // 移動速度を規定値に直す
-                _rb2d.velocity = new Vector2(_horizontalInput * _movementLimitVelocity.x, _rb2d.velocity.y);
+                // 移動速度が既定値を超えている場合
+                if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x * _dushVelocityCoefficient)
+                {
+                    // 移動速度を規定値に直す
+                    _rb2d.velocity = new Vector2(_horizontalInput * _movementLimitVelocity.x * _dushVelocityCoefficient, _rb2d.velocity.y);
+                }
             }
+            else
+            {
+                // 移動速度が既定値を超えている場合
+                if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
+                {
+                    // 移動速度を規定値に直す
+                    _rb2d.velocity = new Vector2(_horizontalInput * _movementLimitVelocity.x, _rb2d.velocity.y);
+                }
+            }
+
+            
         }
     }
 }
