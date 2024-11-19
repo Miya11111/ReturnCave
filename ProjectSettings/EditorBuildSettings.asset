@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Miyachi/1-1.unity
+    guid: 91623bc3aaacd8e42beef886118bf2a2
+  - enabled: 1
+    path: Assets/Scenes/Miyachi/SelectScene.unity
+    guid: cbad10d34ee7d8b4bb3bd312620d0eda
+  - enabled: 1
+    path: Assets/Scenes/Miyachi/Title.unity
+    guid: 8d53ab6c1c48d26439180a1567f0ff90
   m_configObjects: {}

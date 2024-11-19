@@ -3,26 +3,34 @@ using System.Collections.Generic;
 using Player;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    private PlayerInput input;
+    InputAction MoveAction;
+    InputAction RunAction;
+    InputAction JumpAction;
     private PlayerMovement playerMovement;
     private Animator anim = null;
     private SpriteRenderer sprite;
     private bool isJump = false;
-    // Start is called before the first frame update
     void Start()
     {
         //インスタンス化
         this.playerMovement = FindObjectOfType<PlayerMovement>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        input = FindObjectOfType<PlayerInput>();
+        MoveAction = input.actions["Move"];
+        RunAction = input.actions["Dush"];
+        JumpAction = input.actions["Jump"];
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Space)  && isJump == false){
+        if(JumpAction.IsPressed() && isJump == false){
             anim.SetTrigger("Jump");
             isJump = true;
         }
@@ -34,8 +42,8 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetTrigger("JumpEnd");
             isJump = false;
         }
-         else if(Input.GetKey(KeyCode.RightArrow) && playerMovement._isGrounded == true){
-            if(Input.GetKey(KeyCode.LeftShift)){
+         else if(MoveAction.ReadValue<float>() > 0 && playerMovement._isGrounded == true){
+            if(RunAction.IsPressed()){
                 anim.SetBool("Run", true);
                 anim.SetBool("Walk", false);
             }
@@ -45,8 +53,8 @@ public class PlayerAnimation : MonoBehaviour
             }
             sprite.flipX = false;
         }
-        else if(Input.GetKey(KeyCode.LeftArrow) && playerMovement._isGrounded == true){
-            if(Input.GetKey(KeyCode.LeftShift)){
+        else if(MoveAction.ReadValue<float>() < 0 && playerMovement._isGrounded == true){
+            if(RunAction.IsPressed()){
                 anim.SetBool("Run", true);
                 anim.SetBool("Walk", false);
             }
