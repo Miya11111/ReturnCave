@@ -21,6 +21,9 @@ namespace Player
 
         public bool     _isGrounded;
         private bool    _isRunning;
+        private bool    _isClimb;
+        public bool _isClimb_anim;
+        public bool _isClimb_stop_anim;
 
         private Rigidbody2D _rb2d;
 
@@ -33,8 +36,14 @@ namespace Player
         [Header("ジャンプの強さ"), SerializeField]
         private Vector2 _thrust = new Vector2(0.0f, 6.0f);
 
+        [Header("登る速さ") , SerializeField]
+        private Vector2 _verticalMoveForce = new Vector2(0, 10.0f);
+
         // 水平移動の入力を保存
         private float _horizontalInput = 0.0f;
+
+        // 垂直移動の入力を保存
+        private float _verticalInput = 0.0f;
 
         [Header("移動時の限界速度"), SerializeField]
         private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
@@ -58,8 +67,10 @@ namespace Player
         {
             if (context.phase == InputActionPhase.Performed)
             {
-                if (_isGrounded)
+                if (_isGrounded || _isClimb)
                 {
+                    //「ジャンプボタンを押すと登り状態を解除する」を作りたい
+                    _isClimb = false;
                     //Debug.Log("Player: on jump");
                     _rb2d.AddForce(_thrust, ForceMode2D.Impulse);
                 }
@@ -81,12 +92,40 @@ namespace Player
             }
         }
 
+        // InputSystemから呼ばれるロープ登る用関数
+        public void OnClimb(InputAction.CallbackContext context){
+            if(_isClimb == true){
+                _rb2d.gravityScale = 0;
+                //動いているとき
+                if(context.phase == InputActionPhase.Performed){
+                    // Debug.Log("CLIMB");
+                    _isClimb_anim = true;
+                    _rb2d.velocity = Vector2.zero;
+                    // 移動用の入力値を保存
+                    _verticalInput = context.ReadValue<float>();
+                    _isClimb_stop_anim = false;
+                }
+                //止まっているとき
+                else if(context.phase == InputActionPhase.Canceled){
+                    // Debug.Log("NOT CLIMB");
+                    _rb2d.velocity = Vector2.zero;
+                    _verticalInput = 0;
+                    _isClimb_stop_anim = true;
+                }
+            }
+        }
+
         // Playerが着地している間のフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerStay2D(Collider2D collision)
         {
-            //Debug.Log("Player: Grounding");
-
-            _isGrounded = true;
+            //プレイヤーと登れるものが重なっていたら実行
+            if(collision.gameObject.tag == "Climb"){
+                //Debug.Log("CLIMB");
+                _isClimb = true;
+            }
+            else{
+                _isGrounded = true;
+            }
         }
 
         // Playerが地面から離れたフレームに実行(判定のために足元のBoxCollider2Dを使用)
@@ -94,7 +133,16 @@ namespace Player
         {
             //Debug.Log("Player: Ground Exit");
 
-            _isGrounded = false;
+            //プレイヤーが登れるものと離れたら実行
+            if(collision.gameObject.tag == "Climb"){
+                _isClimb = false;
+                _isClimb_anim = false;
+                _verticalInput = 0;
+                _rb2d.gravityScale = 1;
+            }
+            else{
+                _isGrounded = false;
+            }
         }
 
         //敵に当たったときに実行(死亡判定)
@@ -123,7 +171,6 @@ namespace Player
         private void FixedUpdate()
         {
             // raycastで接地判定を実装したい
-
             _rb2d.AddForce(_horizontalInput * _horizontalMoveForce);
 
             if(_isRunning)
@@ -145,7 +192,16 @@ namespace Player
                 }
             }
 
-            
+            //ロープを登る
+            if (_isClimb){
+                _rb2d.AddForce(_verticalInput * _verticalMoveForce);
+                // 移動速度が既定値を超えている場合
+                if (Mathf.Abs(_rb2d.velocity.y) >= _movementLimitVelocity.y)
+                {
+                    // 移動速度を規定値に直す
+                    _rb2d.velocity = new Vector2(0, _verticalInput * _movementLimitVelocity.y);
+                }
+            }
         }
     }
 }
