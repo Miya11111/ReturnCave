@@ -59,7 +59,7 @@ public class EnemyWalk : MonoBehaviour
             Flip();
             enableFlip = false;
             Invoke(nameof(waitFlip), 1f);
-            Debug.Log("EnemyFlip : enableFlip = " + enableFlip);
+            // Debug.Log("EnemyFlip : enableFlip = " + enableFlip);
         }
     }
 
