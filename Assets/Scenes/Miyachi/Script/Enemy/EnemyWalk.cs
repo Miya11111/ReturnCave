@@ -15,6 +15,7 @@ public class EnemyWalk : MonoBehaviour
     private bool moveRight = true;
     private bool enableFlip = true;
     private bool isGrounded = true;
+    private bool Rendered = false; //カメラに映っているか判定する変数
 
     private void Awake()
     {
@@ -30,23 +31,27 @@ public class EnemyWalk : MonoBehaviour
     //左右に動く
     void FixedUpdate()
     {
+        //カメラに映っていたら動く
+        if(Rendered == true){
             _rb2d.AddForce(_horizontalMoveForce);
-        
-        // 進行方向にプレイヤーか他の敵以外があって止まった際に反転
-        Vector2 checkPoint = (Vector2)transform.position + Vector2.right * (moveRight ? 0.1f : -0.1f) + Vector2.down;
-        Collider2D hit = Physics2D.OverlapPoint(checkPoint);
-        if(hit != null && hit.tag != "Player" && _rb2d.velocity.x == 0 && enableFlip == true){
-                Flip();
-                enableFlip = false;
-                Invoke(nameof(waitFlip), 1f);
-        }
+            
+            // 進行方向にプレイヤーか他の敵以外があって止まった際に反転
+            Vector2 checkPoint = (Vector2)transform.position + Vector2.right * (moveRight ? 0.1f : -0.1f) + Vector2.down;
+            Collider2D hit = Physics2D.OverlapPoint(checkPoint);
+            if(hit != null && hit.tag != "Player" && _rb2d.velocity.x == 0 && enableFlip == true){
+                    Flip();
+                    enableFlip = false;
+                    Invoke(nameof(waitFlip), 1f);
+            }
 
-        // 移動速度が既定値を超えている場合
-        if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
-        {
-            // 移動速度を規定値に直す
-            _rb2d.velocity = new Vector2(_movementLimitVelocity.x, _rb2d.velocity.y);
+            // 移動速度が既定値を超えている場合
+            if (Mathf.Abs(_rb2d.velocity.x) >= _movementLimitVelocity.x)
+            {
+                // 移動速度を規定値に直す
+                _rb2d.velocity = new Vector2(_movementLimitVelocity.x, _rb2d.velocity.y);
+            }
         }
+        
     }
 
     //接地しているときfalse
@@ -82,5 +87,12 @@ public class EnemyWalk : MonoBehaviour
         _horizontalMoveForce.x = -_horizontalMoveForce.x;
         _movementLimitVelocity.x = -_movementLimitVelocity.x;
         moveRight = !moveRight;
+    }
+
+        //カメラに映っているときに呼ばれ続ける処理
+    void OnWillRenderObject(){
+        if(Camera.current.name == "Pixel Perfect Camera"){
+            Rendered = true;
+        }
     }
 }

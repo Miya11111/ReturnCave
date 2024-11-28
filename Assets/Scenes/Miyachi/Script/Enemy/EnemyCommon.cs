@@ -6,6 +6,7 @@ public class EnemyCommon : MonoBehaviour
 {
     private Rigidbody2D _rb2d ;
     private Collider2D _collider;
+    
     // Start is called before the first frame update
     private void Awake()
     {
