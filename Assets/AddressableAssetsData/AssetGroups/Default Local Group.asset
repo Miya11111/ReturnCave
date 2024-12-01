@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: c8fadc132611e1d468e1db3162507b1d
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: eb8ccd2a648e52242b71390a98e902a9
+    m_Address: LngTable_ja-JP
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4a7bac032bb698845aa3cd7d27c9c1d4, type: 2}
   m_SchemaSet:
