@@ -46,7 +46,6 @@ public class CameraBounds : MonoBehaviour
 
             //カメラ範囲が2つあったらカメラをプレイヤーの位置に
             if(withinCamera == true){
-                Debug.Log("A");
                 newPosition.x = targetPosition.x;
                 newPosition.y = targetPosition.y;
                 break;
@@ -63,7 +62,6 @@ public class CameraBounds : MonoBehaviour
 
             withinCamera = true;
         }
-        Debug.Log(withinCamera);
         
         // カメラの位置を更新
         if (withinCamera == true){
