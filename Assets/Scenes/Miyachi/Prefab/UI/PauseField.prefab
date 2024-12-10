@@ -154,7 +154,6 @@ RectTransform:
   - {fileID: 8645165249571540298}
   - {fileID: 1227075149268101258}
   - {fileID: 3622077658801395642}
-  - {fileID: 6895238384214198525}
   m_Father: {fileID: 3516056889816288198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1084,113 +1083,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: PAUSE
---- !u!1001 &1955320164637455808
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3475837126248588639}
-    m_Modifications:
-    - target: {fileID: 3754362953739532114, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_Name
-      value: KeyConfig
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
---- !u!1 &3402641469588652690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3754362953739532114, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-  m_PrefabInstance: {fileID: 1955320164637455808}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &6895238384214198525 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4941152012124716349, guid: 49c740ff9ab90904eb88751df2138bf7, type: 3}
-  m_PrefabInstance: {fileID: 1955320164637455808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5641979207839149756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1207,10 +1099,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1596978598607241554, guid: ca5dd28778921d942877ea8e8e18ee0c, type: 3}
-      propertyPath: configObj
-      value: 
-      objectReference: {fileID: 3402641469588652690}
     - target: {fileID: 3201862284162111483, guid: ca5dd28778921d942877ea8e8e18ee0c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1300,7 +1188,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1805714158322650305, guid: ca5dd28778921d942877ea8e8e18ee0c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca5dd28778921d942877ea8e8e18ee0c, type: 3}
