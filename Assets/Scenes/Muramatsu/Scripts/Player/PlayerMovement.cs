@@ -49,6 +49,9 @@ namespace Player
         [Header("ˆÚ“®‚ÌŒÀŠE‘¬“x"), SerializeField]
         private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
 
+        //€–Sˆ—‚É“ü‚é‚©‚Ç‚¤‚©
+        public bool isDead = true;
+
         private void Awake()
         {
             _rb2d = GetComponent<Rigidbody2D>();
@@ -198,7 +201,7 @@ namespace Player
 
         //“G‚É“–‚½‚Á‚½‚Æ‚«‚ÉÀs(€–S”»’è)
         private void OnCollisionEnter2D(Collision2D collision){
-            if(collision.gameObject.tag == "Enemy"){
+            if(collision.gameObject.tag == "Enemy" && isDead == true){
                 Debug.Log("Player: Dead");
                 SceneManager.LoadScene(0);
             }

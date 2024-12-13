@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3971c36f778ef6439f5b1541639010e
+guid: 7564fb08a38c5e8409a205ecd643172b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,28 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: startBoard_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5190cf82e2926a748b4aa4d01c993bed
-      internalID: -1426866610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: startBoard_1
+      name: rope_start_opposite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +118,43 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 5, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: -5}
       tessellationDetail: 0
       bones: []
-      spriteID: db3f10f494ba92249bc5e4b46736f402
-      internalID: 377480803
+      spriteID: f56a777b019dc874882b96bba178d2df
+      internalID: 957133369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rope_start_opposite_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2, y: -8}
+        - {x: -2, y: -4}
+        - {x: 1, y: -4}
+        - {x: 1, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f882a527e75134180b0eb949611a60
+      internalID: -1934917993
       vertices: []
       indices: 
       edges: []
@@ -162,8 +170,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      startBoard_0: -1426866610
-      startBoard_1: 377480803
+      rope_start_opposite_0: 957133369
+      rope_start_opposite_1: -1934917993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
