@@ -15,10 +15,12 @@ public class EnemyWalk : MonoBehaviour
     private bool moveRight = true;
     private bool enableFlip = true;
     private bool isGrounded = true;
-    private bool Rendered = false; //カメラに映っているか判定する変数
+
+    private EnemyCommon enemyCommon;
 
     private void Awake()
     {
+        enemyCommon = GetComponent<EnemyCommon>();
         _rb2d = GetComponent<Rigidbody2D>();
         if(_horizontalMoveForce.x >= 0){
             moveRight = true;
@@ -32,7 +34,7 @@ public class EnemyWalk : MonoBehaviour
     void FixedUpdate()
     {
         //カメラに映っていたら動く
-        if(Rendered == true){
+        // if(enemyCommon.rendered == true){
             _rb2d.AddForce(_horizontalMoveForce);
             
             // 進行方向にプレイヤーか他の敵以外があって止まった際に反転
@@ -50,7 +52,7 @@ public class EnemyWalk : MonoBehaviour
                 // 移動速度を規定値に直す
                 _rb2d.velocity = new Vector2(_movementLimitVelocity.x, _rb2d.velocity.y);
             }
-        }
+        // }
         
     }
 
@@ -87,12 +89,5 @@ public class EnemyWalk : MonoBehaviour
         _horizontalMoveForce.x = -_horizontalMoveForce.x;
         _movementLimitVelocity.x = -_movementLimitVelocity.x;
         moveRight = !moveRight;
-    }
-
-        //カメラに映っているときに呼ばれ続ける処理
-    void OnWillRenderObject(){
-        if(Camera.current.name == "Pixel Perfect Camera"){
-            Rendered = true;
-        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Player;
 using UnityEngine.UIElements;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -47,6 +48,9 @@ namespace Player
 
         [Header("ˆÚ“®‚ÌŒÀŠE‘¬“x"), SerializeField]
         private Vector2 _movementLimitVelocity = new Vector2(5.0f, 20.0f);
+
+        //€–Sˆ—‚É“ü‚é‚©‚Ç‚¤‚©
+        public bool isDead = true;
 
         private void Awake()
         {
@@ -145,15 +149,6 @@ namespace Player
             }
         }
 
-        //“G‚É“–‚½‚Á‚½‚Æ‚«‚ÉÀs(€–S”»’è)
-        private void OnCollisionEnter2D(Collision2D collision){
-            if(collision.gameObject.tag == "Enemy"){
-                Debug.Log("Player: Dead");
-                Destroy(this);
-                Time.timeScale = 0;
-            }
-        }
-
         // Player‚Ìó‘Ô‚ğXV‚·‚é
         private void UpdatePlayerMovementState(PlayerMovementState newState)
         {
@@ -201,6 +196,14 @@ namespace Player
                     // ˆÚ“®‘¬“x‚ğ‹K’è’l‚É’¼‚·
                     _rb2d.velocity = new Vector2(0, _verticalInput * _movementLimitVelocity.y);
                 }
+            }
+        }
+
+        //“G‚É“–‚½‚Á‚½‚Æ‚«‚ÉÀs(€–S”»’è)
+        private void OnCollisionEnter2D(Collision2D collision){
+            if(collision.gameObject.tag == "Enemy" && isDead == true){
+                Debug.Log("Player: Dead");
+                SceneManager.LoadScene(0);
             }
         }
     }
