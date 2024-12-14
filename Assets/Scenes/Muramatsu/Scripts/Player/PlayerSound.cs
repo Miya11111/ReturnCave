@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerSound : MonoBehaviour
 {
     private PlayerMovement playerMovement;
-    public AudioClip sound;
+    public AudioClip jumpSound;
+    public AudioClip deathSound;
     AudioSource audioSource;
 
     private void Start()
@@ -20,9 +21,15 @@ public class PlayerSound : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed && playerMovement._isGrounded == true)
         {
-            audioSource.clip = sound;
+            audioSource.clip = jumpSound;
             audioSource.volume = 0.25f;
             audioSource.Play();
         }
+    }
+    
+    public void DeathSound(){
+        audioSource.clip = deathSound;
+        audioSource.volume = 0.25f;
+        audioSource.Play();
     }
 }

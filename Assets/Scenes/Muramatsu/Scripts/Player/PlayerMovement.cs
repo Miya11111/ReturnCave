@@ -27,6 +27,7 @@ namespace Player
         public bool _isClimb_stop_anim;
 
         private Rigidbody2D _rb2d;
+        private PlayerSound _playerSound;
 
         [Header("歩く速さ") , SerializeField]
         private Vector2 _horizontalMoveForce = new Vector2(10.0f, 0);
@@ -55,6 +56,8 @@ namespace Player
         private void Awake()
         {
             _rb2d = GetComponent<Rigidbody2D>();
+
+            _playerSound = GetComponent<PlayerSound>();
         }
 
         // InputSystemから呼ばれる左右移動用関数
@@ -122,21 +125,23 @@ namespace Player
         // Playerが着地している間のフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerStay2D(Collider2D collision)
         {
-            //プレイヤーと登れるものが重なっていたら実行
-            if (collision.gameObject.tag == "Climb"){
-                //Debug.Log("CLIMB");
-                _isClimb = true;
+            if(collision.gameObject.tag != "CameraBound"){
+                //プレイヤーと登れるものが重なっていたら実行
+                if (collision.gameObject.tag == "Climb"){
+                    //Debug.Log("CLIMB");
+                    _isClimb = true;
+                }
+                else{
+                    // Debug.Log("Player: TriggerStay");
+                    _isGrounded = true;
+                }
             }
-
-            Debug.Log("Player: TriggerStay");
-            _isGrounded = true;
-            
         }
 
         // Playerが地面から離れたフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("Player: Ground Exit");
+            // Debug.Log("Player: Ground Exit");
 
             //プレイヤーが登れるものと離れたら実行
             if(collision.gameObject.tag == "Climb"){
@@ -203,8 +208,26 @@ namespace Player
         private void OnCollisionEnter2D(Collision2D collision){
             if(collision.gameObject.tag == "Enemy" && isDead == true){
                 Debug.Log("Player: Dead");
-                SceneManager.LoadScene(0);
+                StartCoroutine("Death");
             }
+        }
+
+        IEnumerator Death(){
+            GameObject camera = transform.Find("Pixel Perfect Camera").gameObject;
+            camera.GetComponent<CameraBounds>().enabled = false;
+            _playerSound.DeathSound();
+            Time.timeScale = 0;
+            // camera.transform.Translate(5, 0, 0);
+            for (float i = 3; i >= 0; i -= 0.5f){
+                camera.transform.Translate(i, 0, 0);
+                yield return new WaitForSecondsRealtime(0.1f);
+                camera.transform.Translate(-i, 0, 0);
+                yield return new WaitForSecondsRealtime(0.1f);
+                // camera.transform.Translate(i/2, 0, 0);
+            }
+            yield return new WaitForSecondsRealtime(0.5f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 1;
         }
     }
 }
