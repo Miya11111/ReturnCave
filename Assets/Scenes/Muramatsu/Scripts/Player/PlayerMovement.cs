@@ -123,19 +123,20 @@ namespace Player
         private void OnTriggerStay2D(Collider2D collision)
         {
             //プレイヤーと登れるものが重なっていたら実行
-            if(collision.gameObject.tag == "Climb"){
+            if (collision.gameObject.tag == "Climb"){
                 //Debug.Log("CLIMB");
                 _isClimb = true;
             }
-            else{
-                _isGrounded = true;
-            }
+
+            Debug.Log("Player: TriggerStay");
+            _isGrounded = true;
+            
         }
 
         // Playerが地面から離れたフレームに実行(判定のために足元のBoxCollider2Dを使用)
         private void OnTriggerExit2D(Collider2D collision)
         {
-            //Debug.Log("Player: Ground Exit");
+            Debug.Log("Player: Ground Exit");
 
             //プレイヤーが登れるものと離れたら実行
             if(collision.gameObject.tag == "Climb"){
@@ -144,9 +145,8 @@ namespace Player
                 _verticalInput = 0;
                 _rb2d.gravityScale = 1;
             }
-            else{
-                _isGrounded = false;
-            }
+
+            _isGrounded = false;
         }
 
         // Playerの状態を更新する
