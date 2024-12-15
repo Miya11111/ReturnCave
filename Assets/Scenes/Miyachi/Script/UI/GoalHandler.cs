@@ -24,7 +24,7 @@ public class GoalHandler : MonoBehaviour
 
                 // ファイルを書き込んだ後にアセットをリフレッシュ　※これがないとクリアデータが即時反映されない
                 File.WriteAllText(filePath, jsonObject.ToString());
-                AssetDatabase.Refresh(); // アセットのリフレッシュを強制 
+                // AssetDatabase.Refresh(); // アセットのリフレッシュを強制 
             }
 
             //シーンの読み込み

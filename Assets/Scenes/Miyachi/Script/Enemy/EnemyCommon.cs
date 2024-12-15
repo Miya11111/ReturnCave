@@ -7,6 +7,8 @@ public class EnemyCommon : MonoBehaviour
 {
     private Rigidbody2D _rb2d;
     private Collider2D _collider;
+    
+    private EnemySound _enemySound;
     public bool rendered = false; //カメラに映っているか判定する変数
     public bool disableStamp = false;   //踏めるかどうか
     public bool ableRide = false;   //乗れるかどうか
@@ -19,6 +21,7 @@ public class EnemyCommon : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        _enemySound = GetComponent<EnemySound>();
     }
 
     private void FixedUpdate(){
@@ -54,6 +57,7 @@ public class EnemyCommon : MonoBehaviour
         if (collider.gameObject.name == "GroundCheck"){
             //踏める敵
             if(!disableStamp){
+                _enemySound.StampSound();
                 transform.localScale = new Vector3(1f, 0.5f, 1);
                 if(_rb2d != null){
                 _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -74,6 +78,7 @@ public class EnemyCommon : MonoBehaviour
 
         //トロッコに当たったときの処理
         if(collider.gameObject.name == "trolley_collider"){
+            _enemySound.StampSound();
             transform.localScale = new Vector3(1f, 0.5f, 1);
             if(_rb2d != null){
             _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;

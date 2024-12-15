@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Player;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -41,6 +40,7 @@ public class PlayerAnimation : MonoBehaviour
             if(playerMovement._isClimb_stop_anim){
                 anim.speed = 0;
             }
+            isJump = true;
         }
         //右に動く
          else if(MoveAction.ReadValue<float>() > 0 && playerMovement._isGrounded == true){
@@ -77,26 +77,27 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetBool("Run",false);
             anim.SetBool("Climb",false);
             anim.ResetTrigger("JumpEnd");
+            anim.ResetTrigger("Jump");
         }
 
         //ジャンプ終了
-        if(playerMovement._isGrounded == true && isJump == true){
+        if(playerMovement._isGrounded && isJump){
             anim.SetTrigger("JumpEnd");
             isJump = false;
         }
         //ジャンプ
-        if(JumpAction.IsPressed() && isJump == false){
+        if(playerMovement._isGrounded && JumpAction.IsPressed() && !isJump){
             anim.SetTrigger("Jump");
             isJump = true;
         }
         //落ちる
-        if(playerMovement._isGrounded == false && isJump == false){
+        if(!playerMovement._isGrounded && !isJump){
             anim.SetTrigger("Fall");
             isJump = true;
         }
         //バグ回避のため
-        if(playerMovement._isGrounded == true && anim.GetNextAnimatorStateInfo(0).IsName("Main_Character_jump")){
-            anim.SetTrigger("JumpEnd");
-        }
+        // if(playerMovement._isGrounded == true && anim.GetNextAnimatorStateInfo(0).IsName("Main_Character_jump")){
+        //     anim.SetTrigger("JumpEnd");
+        // }
     }
 }
