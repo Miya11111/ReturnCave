@@ -213,17 +213,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2502852388862664539, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.26971343
+      value: 0.3951583
       objectReference: {fileID: 0}
     - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.26971343
+      value: 0.9308176
       objectReference: {fileID: 0}
     - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.2735849
+      value: 0.43261394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814226771684881885, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.43137255
       objectReference: {fileID: 0}
     - target: {fileID: 4980043951321743165, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -241,21 +257,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 230
       objectReference: {fileID: 0}
+    - target: {fileID: 5051149915144150953, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5092971363953789510, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.26971343
+      value: 0.39800632
       objectReference: {fileID: 0}
     - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.26971343
+      value: 0.39800632
       objectReference: {fileID: 0}
     - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.2735849
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687085788534027484, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.98039216
       objectReference: {fileID: 0}
     - target: {fileID: 6455382178846588235, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Enabled
@@ -463,6 +495,141 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &330817412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5051149915144150953, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+  m_PrefabInstance: {fileID: 261098712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &949997758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949997760}
+  - component: {fileID: 949997759}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &949997759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949997758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 84bb20dbf93dade48901d65eefa29ee5, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1e34dcc9-21b5-43ef-a8eb-ada647479f9f
+    m_ActionName: PlayerActionMap/Walk[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e17de70b-caf2-4626-97d7-54cf41699037
+    m_ActionName: PlayerActionMap/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1062dbf-737a-4a13-94fb-335105ee2cb3
+    m_ActionName: New action map/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: OnDush
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bfe3f8f4-b88d-48e6-8540-93a8549dd0ec
+    m_ActionName: PlayerActionMap/Dush[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: OnClimb
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c6917b74-06d8-48ab-b46c-0f27360e824a
+    m_ActionName: PlayerActionMap/Climb[/Keyboard/downArrow,/Keyboard/upArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerActionMap
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &949997760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949997758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16268215, y: -2.9375, z: -9.927625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1379281543
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 330817412}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1379281546
@@ -696,3 +863,4 @@ SceneRoots:
   - {fileID: 281576512}
   - {fileID: 1791980051}
   - {fileID: 1379281546}
+  - {fileID: 949997760}

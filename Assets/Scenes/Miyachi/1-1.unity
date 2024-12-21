@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1479774418}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &401209438
@@ -2316,17 +2316,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
---- !u!114 &763276687 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9006876611901015666, guid: b12919ca8e256004cad540c747c4e352, type: 3}
-  m_PrefabInstance: {fileID: 1639577006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad120f51fe43c6e4ea655454c85940e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &826018312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244699991145392747, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
@@ -2489,11 +2478,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &919807334 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1872838607110200968, guid: b12919ca8e256004cad540c747c4e352, type: 3}
-  m_PrefabInstance: {fileID: 1639577006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &955899083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244699991145392747, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
@@ -3771,6 +3755,11 @@ Transform:
   - {fileID: 2021120216}
   m_Father: {fileID: 487943064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1390333167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7710125154427927531, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+  m_PrefabInstance: {fileID: 1639577006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1395429285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,6 +4044,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
+--- !u!1 &1479774418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3444470807897010554, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+  m_PrefabInstance: {fileID: 1639577006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1510798317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244699991145392747, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
@@ -4391,6 +4385,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1239173879}
+        m_TargetAssemblyTypeName: PlayerSound, Assembly-CSharp
+        m_MethodName: OnJumpSound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e17de70b-caf2-4626-97d7-54cf41699037
     m_ActionName: PlayerActionMap/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -4576,6 +4582,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1270916936}
     m_Modifications:
+    - target: {fileID: 1775495063754334535, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775495063754334535, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775495063754334535, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775495063754334535, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775495063754334535, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
     - target: {fileID: 3516056889816288198, guid: b12919ca8e256004cad540c747c4e352, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.75299
@@ -4624,24 +4650,59 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1077904395}
-    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 763276687}
-    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
+    - target: {fileID: 5192249774642288915, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.5176471
       objectReference: {fileID: 0}
-    - target: {fileID: 9006876611901015666, guid: b12919ca8e256004cad540c747c4e352, type: 3}
-      propertyPath: configObj
+    - target: {fileID: 5192249774642288915, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192249774642288915, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192249774642288915, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192249774642288915, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495777584297110648, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: gameObj
       value: 
-      objectReference: {fileID: 919807334}
+      objectReference: {fileID: 1390333167}
+    - target: {fileID: 6720184639557680302, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: gameObj
+      value: 
+      objectReference: {fileID: 1923021830}
+    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640857542642931080, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
     - target: {fileID: 9006876611901015666, guid: b12919ca8e256004cad540c747c4e352, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1077904395}
-    m_RemovedComponents:
-    - {fileID: 4405761939115385981, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -38517,6 +38578,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244699991145392747, guid: 9c188caa8a761ba449b90ca770120ccc, type: 3}
   m_PrefabInstance: {fileID: 23774569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923021830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9064558877223332271, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+  m_PrefabInstance: {fileID: 1639577006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1956549448
 PrefabInstance:

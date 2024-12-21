@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1639577008}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &401209438
@@ -3222,7 +3222,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9006876611901015666, guid: b12919ca8e256004cad540c747c4e352, type: 3}
   m_PrefabInstance: {fileID: 1639577006}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1639577008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad120f51fe43c6e4ea655454c85940e0, type: 3}
@@ -5219,6 +5219,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1239173879}
+        m_TargetAssemblyTypeName: PlayerSound, Assembly-CSharp
+        m_MethodName: OnJumpSound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e17de70b-caf2-4626-97d7-54cf41699037
     m_ActionName: PlayerActionMap/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -5358,6 +5370,11 @@ PrefabInstance:
 --- !u!4 &1639577007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3516056889816288198, guid: b12919ca8e256004cad540c747c4e352, type: 3}
+  m_PrefabInstance: {fileID: 1639577006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1639577008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3444470807897010554, guid: b12919ca8e256004cad540c747c4e352, type: 3}
   m_PrefabInstance: {fileID: 1639577006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664612426
