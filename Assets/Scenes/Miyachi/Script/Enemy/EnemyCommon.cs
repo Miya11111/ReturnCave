@@ -13,6 +13,7 @@ public class EnemyCommon : MonoBehaviour
     public bool disableStamp = false;   //踏めるかどうか
     public bool ableRide = false;   //乗れるかどうか
     public bool isRotate = false;
+    private bool calledOnce = true;
     private float timer = 0;
     
     // Start is called before the first frame update
@@ -57,13 +58,18 @@ public class EnemyCommon : MonoBehaviour
         if (collider.gameObject.name == "GroundCheck"){
             //踏める敵
             if(!disableStamp){
-                _enemySound.StampSound();
-                transform.localScale = new Vector3(1f, 0.5f, 1);
-                if(_rb2d != null){
-                _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                if(calledOnce){
+                    calledOnce = false;
+                    _enemySound.StampSound();
+                    transform.localScale = new Vector3(1f, 0.5f, 1);
+                    if(_rb2d != null){
+                    _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                    }
+                    _collider.enabled = false;
+                    _collider.isTrigger = true;
+                    Destroy(gameObject,1f);
                 }
-                _collider.enabled = false;
-                Destroy(gameObject,1f);
+                
             }
             //踏めない敵
             else{
