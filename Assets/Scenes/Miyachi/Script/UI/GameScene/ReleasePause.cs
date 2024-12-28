@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ReleasePause : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ReleasePause : MonoBehaviour
 
     public void OnClick(){
         configObj.SetActive(false);
+        GameObject.Find("InputManager").gameObject.GetComponent<PlayerInput>().enabled = true;
         Time.timeScale = 1;
         audioSource.UnPause();
     }

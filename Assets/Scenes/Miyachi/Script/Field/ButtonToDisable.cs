@@ -9,6 +9,9 @@ public class ButtonToDisable : MonoBehaviour
 
     [Header("押されたボタンスプライト"), SerializeField]
     private Sprite pushedButton;
+    
+    [SerializeField]
+    private AudioSource audioSource;
     private SpriteRenderer buttonSprite;
 
     void Start (){
@@ -19,6 +22,7 @@ public class ButtonToDisable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
 
         if(collider.gameObject.name == "GroundCheck"){
+            audioSource.Play();
             //スプライト変更
             buttonSprite.sprite = pushedButton;
 
