@@ -197,6 +197,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174352232}
   m_CullTransparentMesh: 1
+--- !u!114 &210323543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7127248757972851493, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+  m_PrefabInstance: {fileID: 261098712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &261098712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209,9 +220,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cave
       objectReference: {fileID: 0}
-    - target: {fileID: 1560937187839936070, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 210323543}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134983505314259254, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455382178846588235, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: stagelist.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7822834902219066575, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_Pivot.x
@@ -291,6 +330,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822834902219066575, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8114137985386701491, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -411,11 +454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &330817412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5051149915144150953, guid: b65ed727a3874e746ae7bd643b3c384a, type: 3}
-  m_PrefabInstance: {fileID: 261098712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &949997758
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 330817412}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1379281546
@@ -739,7 +777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1958451854
 Transform:
   m_ObjectHideFlags: 0
